@@ -1,0 +1,88 @@
+<html>
+  <head>  
+    <title>Edit</title>  
+    <style>
+      .username.valid {
+          background-color: lightgreen;
+      }
+      .username.dirty.invalid-required {
+          background-color: red;
+      }
+      .username.dirty.invalid-minlength {
+          background-color: yellow;
+      }
+
+      .age.valid {
+          background-color: lightgreen;
+      }
+      .age.dirty.invalid-required {
+          background-color: red;
+      }
+
+      .salary.valid {
+          background-color: lightgreen;
+      }
+      .salary.dirty.invalid-required {
+          background-color: red;
+      }
+
+    </style>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <!-- <link rel="stylesheet" href="app.css"> -->
+  </head>
+  <body>
+      <div class="generic-container">
+          <div class="panel panel-default">
+              <div class="panel-heading"><span class="lead">Update Details</span></div>
+              <div class="formcontainer">
+                  <form name="myForm" class="form-horizontal">
+                      <input type="hidden" />
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-label" for="uname">Name</label>
+                              <div class="col-md-7">
+                                  <input type="text" [(ngModel)] = "formdata.name" id="uname" class="username form-control input-sm" placeholder="Enter your name" required />
+                                  <div class="has-error">
+                                      <span>This is a required field</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-label" for="age">Age</label>
+                              <div class="col-md-7">
+                                  <input type="number" [(ngModel)] = "formdata.age" id="age" class="age form-control input-sm" placeholder="Enter your age" required />
+                                  <div class="has-error">
+                                      <span>This is a required field</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-label" for="salary">Salary</label>
+                              <div class="col-md-7">
+                                  <input type="number" [(ngModel)] = "formdata.salary" id="salary" class="salary form-control input-sm" placeholder="Enter your salary" required />
+                                  <div class="has-error">
+                                      <span>This is a required field</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="form-actions floatRight">
+                              <input type="submit" (click)="update()" class="btn btn-primary btn-sm" />
+                              <!-- <button type="button" class="btn btn-warning btn-sm">Reset Form</button> -->
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+     
+      </div>
+  </body>
+</html>
